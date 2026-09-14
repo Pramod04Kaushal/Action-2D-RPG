@@ -14,6 +14,16 @@ public class PlayerMovement : MonoBehaviour
     
     private bool isKnockedBack;
 
+    public Player_Combat playerCombat;
+
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Slash"))
+        {
+            playerCombat.Attack();
+        }
+    }
 
     // FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
