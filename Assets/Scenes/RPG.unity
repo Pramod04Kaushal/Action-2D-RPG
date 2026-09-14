@@ -615382,6 +615382,7 @@ GameObject:
   - component: {fileID: 584725043}
   - component: {fileID: 584725044}
   - component: {fileID: 584725045}
+  - component: {fileID: 584725046}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -615630,6 +615631,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 5
   maxHealth: 5
+--- !u!114 &584725046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584725036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f06c3da6ac52d40b063a37b1fc354b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &672310549
 GameObject:
   m_ObjectHideFlags: 0
@@ -616094,6 +616107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 1356392911}
   weaponRange: 0.6
+  knockbackForce: 1
+  knockbackTime: 0.1
+  stunTime: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
