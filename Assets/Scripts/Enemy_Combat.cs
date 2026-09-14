@@ -7,17 +7,11 @@ public class Enemy_Combat : MonoBehaviour
     public int damage = 1;
     public Transform attackPoint;
     public float weaponRange;
+    public float knockbackForce;
+    public float stunTime;
     public LayerMask playerLayer;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<PlayerHealth>().ChangeHealth(-damage);
 
-        }
-        
-    }
 
     public void Attack()
     {
@@ -26,6 +20,7 @@ public class Enemy_Combat : MonoBehaviour
         if(hitPlayer.Length > 0)
         {
             hitPlayer[0].GetComponent<PlayerHealth>().ChangeHealth(-damage);
+            hitPlayer[0].GetComponent<PlayerMovement>().knockback(transform, knockbackForce, stunTime);
         }
     }
 }
