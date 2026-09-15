@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float speed;
+
     public Rigidbody2D rb;
     public int facingDirection = 1; // 1 for right, -1 for left
     public Animator animator;
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Horizontal", Mathf.Abs(horizontalInput)); // Mathf.Abs Turns all numbers into positive numbers
             animator.SetFloat("Vertical", Mathf.Abs(verticalInput));
 
-            rb.velocity = new Vector2(horizontalInput, verticalInput) * speed; // Controls Player Velocity
+            rb.velocity = new Vector2(horizontalInput, verticalInput) * StatsManager.Instance.speed; // Controls Player Velocity
         }
 
 
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
 
-    public void knockback(Transform enemy, float force, float stunTime)
+    public void Knockback(Transform enemy, float force, float stunTime)
     {
         isKnockedBack = true;
         Vector2 direction = (transform.position - enemy.position).normalized;
