@@ -26,6 +26,16 @@ public class ExpManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        Enemy_Health.OnMonsterDefeatd += GainExperience;
+    }
+
+    private void OnDisable()
+    {
+        Enemy_Health.OnMonsterDefeatd -= GainExperience;
+    }
+
     public void GainExperience(int amount)
     {
         currentExp += amount;
